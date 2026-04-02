@@ -4,6 +4,11 @@ An end-to-end full-stack application that automatically generates professional d
 
 ---
 
+## 🌐 Live Demo
+
+🚀 Frontend (Live App): https://stupa-portfolio.vercel.app  
+⚙️ Backend API: https://stupaportfolio.onrender.com
+
 ## 📌 Overview
 
 The AI Portfolio Generator simplifies the process of building a professional portfolio. Instead of manually writing and formatting content, users prepare their data in a structured Notion template, and the system generates a complete portfolio automatically.
