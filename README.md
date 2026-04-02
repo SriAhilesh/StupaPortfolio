@@ -29,6 +29,31 @@ This project demonstrates:
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home](./docs/screenshots/home.png)
+
+### 🔑 Input Section (Notion Token & Page URL)
+
+![Input](./docs/screenshots/input.png)
+
+### 📊 Notion Template (Data Source)
+
+![Notion Template](./docs/screenshots/Notion%20Data%20Template.png)
+
+### 📄 Generated Portfolio Output
+
+![Output 1](./docs/screenshots/Output1.png)
+![Output 2](./docs/screenshots/Output2.png)
+
+### 🧾 Data Entry in Notion Tables
+
+![Table Entry](./docs/screenshots/Table%20dataentry.png)
+
+---
+
 ## 🧭 How to Use
 
 This project follows a **Notion-driven workflow**, where users prepare their data in a predefined template.
@@ -58,7 +83,8 @@ StupaPortfolio/
 │
 ├── frontend/        # React-based user interface
 ├── backend/         # Python backend (AI processing)
-├── docs/            # Documentation (usage guide, etc.)
+├── docs/
+│   ├── screenshots/
 │   └── StupaWorking.md
 ├── README.md
 └── .gitignore
@@ -180,36 +206,19 @@ Restart frontend after updating.
 ## 🧠 How It Works (Architecture)
 
 1. **Notion as Data Source**
-
-   * User fills structured template
-
-2. **API Integration**
-
-   * Backend fetches data using Notion API
-
-3. **Processing Layer**
-
-   * Data is cleaned and structured
-
-4. **AI Enhancement**
-
-   * LLM improves descriptions and formatting
-
-5. **Output Generation**
-
-   * Portfolio content is generated
-
-6. **Frontend Rendering**
-
-   * UI displays and allows download
+2. **Backend fetches data via Notion API**
+3. **Processing + Structuring layer**
+4. **AI enhances content**
+5. **Portfolio is generated**
+6. **Frontend displays output**
 
 ---
 
 ## 📦 Important Notes
 
-* `node_modules/` is excluded (use `npm install`)
-* `venv/` is excluded (recreate locally)
-* `.env` files are not pushed (keep secrets safe)
+* `node_modules/` is excluded
+* `venv/` is excluded
+* `.env` files are not pushed
 
 ---
 
@@ -218,13 +227,10 @@ Restart frontend after updating.
 ### Frontend
 
 * Deploy using Vercel or Netlify
-* Root directory: `/frontend`
 
 ### Backend
 
 * Deploy using Render / Railway
-* Root directory: `/backend`
-* Add environment variables
 
 ### Connect Both
 
@@ -239,25 +245,24 @@ VITE_API_URL=https://your-backend-url.com
 ### ❌ Notion data not loading
 
 * Ensure page is shared with integration
-* Verify token is correct
+* Verify token
 
 ### ❌ Frontend not connecting
 
 * Check `.env` API URL
-* Ensure backend is running
 
 ### ❌ Dependencies missing
 
-* Run `npm install` / `pip install -r requirements.txt`
+* Run install commands again
 
 ---
 
 ## 🌱 Future Improvements
 
 * Authentication system
-* Multiple portfolio templates
-* Export as PDF / hosted website
-* Drag-and-drop customization
+* Multiple templates
+* PDF export
+* Custom themes
 * Database integration
 
 ---
@@ -266,18 +271,16 @@ VITE_API_URL=https://your-backend-url.com
 
 Sri Ahilesh
 
-Developed as a full-stack AI project demonstrating real-world AI integration, system design, and frontend-backend architecture.
-
 ---
 
 ## 📜 License
 
-This project is open-source and available for learning and development purposes.
+Open-source for learning and development.
 
 ---
 
 ## 💡 Final Note
 
-This project separates **content creation (Notion)** from **presentation (Portfolio UI)** — enabling a scalable, AI-driven approach to portfolio generation.
+This project separates **content creation (Notion)** from **presentation (Portfolio UI)** — enabling a scalable and AI-driven portfolio generation workflow.
 
 ---
