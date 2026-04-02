@@ -1,17 +1,18 @@
 # 🚀 AI-Powered Portfolio Generator
 
-An end-to-end full-stack application that automatically generates professional developer portfolios using AI. This project takes minimal user input and transforms it into structured, polished, and ready-to-use portfolio content through an intelligent backend pipeline and a clean frontend interface.
+An end-to-end full-stack application that automatically generates professional developer portfolios using AI. This project uses structured data from Notion and transforms it into a polished, ready-to-use portfolio through an intelligent backend pipeline and a clean frontend interface.
 
 ---
 
 ## 📌 Overview
 
-The AI Portfolio Generator is designed to simplify the process of creating a developer portfolio. Instead of manually writing descriptions, structuring projects, and formatting content, users can input basic information and let the system generate a complete portfolio.
+The AI Portfolio Generator simplifies the process of building a professional portfolio. Instead of manually writing and formatting content, users prepare their data in a structured Notion template, and the system generates a complete portfolio automatically.
 
 This project demonstrates:
 
 * Full-stack development (Frontend + Backend)
 * AI/LLM integration
+* Notion API integration
 * Modular system design
 * Real-world deployment architecture
 
@@ -19,12 +20,34 @@ This project demonstrates:
 
 ## 🧠 Key Features
 
-* ✨ AI-generated project descriptions and summaries
-* 🧩 Modular backend pipeline (input → processing → output)
+* ✨ AI-enhanced project descriptions and summaries
+* 🧩 Notion-based structured input system
 * 🎨 Clean and responsive frontend interface
-* ⚡ Fast content generation with structured output
-* 🔁 Reusable and scalable architecture
-* 📄 Ready-to-use portfolio content
+* ⚡ Fast content generation pipeline
+* 🔁 Scalable and reusable backend architecture
+* 📄 Ready-to-use portfolio output
+
+---
+
+## 🧭 How to Use
+
+This project follows a **Notion-driven workflow**, where users prepare their data in a predefined template.
+
+👉 **Full step-by-step guide:**
+[How to Generate Your Portfolio](./docs/StupaWorking.md)
+
+### Quick Summary
+
+1. Download and duplicate the Notion template
+2. Fill in all required details (projects, skills, etc.)
+3. Generate a Notion integration token
+4. Share your Notion page with the integration
+5. Provide:
+
+   * Notion Token
+   * Notion Page URL
+6. Click **Generate Portfolio**
+7. View and download your portfolio
 
 ---
 
@@ -34,11 +57,11 @@ This project demonstrates:
 StupaPortfolio/
 │
 ├── frontend/        # React-based user interface
-│
 ├── backend/         # Python backend (AI processing)
-│
-├── README.md        # Project documentation
-└── .gitignore       # Ignored files and folders
+├── docs/            # Documentation (usage guide, etc.)
+│   └── StupaWorking.md
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -49,13 +72,14 @@ StupaPortfolio/
 
 * React.js
 * Vite (or Create React App)
-* Tailwind CSS (if used)
+* Tailwind CSS
 
 ### Backend
 
 * Python
-* FastAPI / Flask (depending on your setup)
-* LLM integration (GPT-based or similar)
+* FastAPI / Flask
+* Notion API
+* LLM integration (GPT-based / Gemini)
 
 ### Tools
 
@@ -70,8 +94,8 @@ StupaPortfolio/
 ### 🔹 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/stupa-portfolio-generator.git
-cd stupa-portfolio-generator
+git clone https://github.com/your-username/StupaPortfolio.git
+cd StupaPortfolio
 ```
 
 ---
@@ -84,7 +108,7 @@ npm install
 npm run dev
 ```
 
-Frontend will run at:
+Frontend runs at:
 
 ```
 http://localhost:5173   (Vite)
@@ -95,8 +119,6 @@ http://localhost:3000   (CRA)
 ---
 
 ### 🔹 3. Setup Backend
-
-Create virtual environment (recommended):
 
 ```
 cd backend
@@ -123,19 +145,19 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run backend server:
+Run server:
 
 ```
 python main.py
 ```
 
-OR (if using FastAPI):
+OR:
 
 ```
 uvicorn main:app --reload
 ```
 
-Backend will run at:
+Backend runs at:
 
 ```
 http://localhost:8000
@@ -145,42 +167,41 @@ http://localhost:8000
 
 ## 🔗 Connecting Frontend & Backend
 
-Create a `.env` file inside `frontend/`:
+Create `.env` inside `frontend/`:
 
 ```
 VITE_API_URL=http://localhost:8000
 ```
 
-Restart frontend after adding this.
+Restart frontend after updating.
 
 ---
 
 ## 🧠 How It Works (Architecture)
 
-1. **User Input (Frontend)**
+1. **Notion as Data Source**
 
-   * User enters project details, skills, etc.
+   * User fills structured template
 
-2. **API Request**
+2. **API Integration**
 
-   * Frontend sends data to backend via REST API
+   * Backend fetches data using Notion API
 
-3. **Processing Engine (Backend)**
+3. **Processing Layer**
 
-   * Input is structured and passed to AI model
-   * Prompt engineering enhances content quality
+   * Data is cleaned and structured
 
-4. **Content Generation**
+4. **AI Enhancement**
 
-   * AI generates descriptions, summaries, formatting
+   * LLM improves descriptions and formatting
 
-5. **Response to Frontend**
+5. **Output Generation**
 
-   * Structured JSON is returned
+   * Portfolio content is generated
 
-6. **Rendering**
+6. **Frontend Rendering**
 
-   * Frontend displays ready-to-use portfolio content
+   * UI displays and allows download
 
 ---
 
@@ -188,7 +209,7 @@ Restart frontend after adding this.
 
 * `node_modules/` is excluded (use `npm install`)
 * `venv/` is excluded (recreate locally)
-* `.env` files are not pushed (store secrets securely)
+* `.env` files are not pushed (keep secrets safe)
 
 ---
 
@@ -197,17 +218,15 @@ Restart frontend after adding this.
 ### Frontend
 
 * Deploy using Vercel or Netlify
-* Set root directory to `/frontend`
+* Root directory: `/frontend`
 
 ### Backend
 
 * Deploy using Render / Railway
-* Set root directory to `/backend`
-* Add environment variables in platform dashboard
+* Root directory: `/backend`
+* Add environment variables
 
 ### Connect Both
-
-Update frontend `.env`:
 
 ```
 VITE_API_URL=https://your-backend-url.com
@@ -217,18 +236,19 @@ VITE_API_URL=https://your-backend-url.com
 
 ## ⚠️ Common Issues
 
-### ❌ Frontend not connecting to backend
+### ❌ Notion data not loading
 
-* Check API URL in `.env`
+* Ensure page is shared with integration
+* Verify token is correct
+
+### ❌ Frontend not connecting
+
+* Check `.env` API URL
 * Ensure backend is running
 
-### ❌ Module not found errors
+### ❌ Dependencies missing
 
-* Run `npm install` again
-
-### ❌ Python dependencies missing
-
-* Run `pip install -r requirements.txt`
+* Run `npm install` / `pip install -r requirements.txt`
 
 ---
 
@@ -236,7 +256,7 @@ VITE_API_URL=https://your-backend-url.com
 
 * Authentication system
 * Multiple portfolio templates
-* Export as PDF / Website
+* Export as PDF / hosted website
 * Drag-and-drop customization
 * Database integration
 
@@ -245,7 +265,8 @@ VITE_API_URL=https://your-backend-url.com
 ## 👨‍💻 Author
 
 Sri Ahilesh
-Developed as a full-stack AI project demonstrating real-world application of LLMs, frontend engineering, and backend system design.
+
+Developed as a full-stack AI project demonstrating real-world AI integration, system design, and frontend-backend architecture.
 
 ---
 
@@ -257,6 +278,6 @@ This project is open-source and available for learning and development purposes.
 
 ## 💡 Final Note
 
-This project is not just about generating portfolios — it represents a scalable approach to combining AI with real-world applications. The architecture, modular design, and automation reflect production-level thinking.
+This project separates **content creation (Notion)** from **presentation (Portfolio UI)** — enabling a scalable, AI-driven approach to portfolio generation.
 
 ---
