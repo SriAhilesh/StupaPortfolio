@@ -12,7 +12,7 @@ export default function Home() {
   const [previewLink, setPreviewLink] = useState("");
   const [zipUrl, setZipUrl] = useState("");
 
-  const API_BASE = "http://127.0.0.1:8000";
+  const API_BASE = process.env.REACT_APP_API_URL;
 
   const handleGenerate = async () => {
       if (!notionToken || !pageUrl) {
