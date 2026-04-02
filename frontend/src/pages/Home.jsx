@@ -10,6 +10,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [portfolioPath, setPortfolioPath] = useState("");
   const [previewLink, setPreviewLink] = useState("");
+  const [zipUrl, setZipUrl] = useState("");
 
   const API_BASE = "http://127.0.0.1:8000";
 
@@ -41,6 +42,7 @@ export default function Home() {
         setMessage(message);
         setPortfolioPath(path);
         setPreviewLink(`${API_BASE}${preview_url}`);
+        setZipUrl(`${API_BASE}${zip_url}`);
       } catch (err) {
         console.error("Error:", err);
         setMessage(`❌ Error: ${err.response?.data?.detail || err.message}`);
@@ -286,7 +288,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   {/* Preview Portfolio */}
                   <a
-                    href={`${API_BASE}/outputs/${style}_portfolio/index.html`}
+                    href={previewLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 hover:scale-105 active:scale-95 transition-all text-white shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-2"
@@ -297,7 +299,7 @@ export default function Home() {
 
                   {/* Download ZIP */}
                   <a
-                    href={`${API_BASE}/download/${style}`}
+                    href={zipUrl}
                     className="flex-1 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 hover:scale-105 active:scale-95 transition-all text-white shadow-lg hover:shadow-pink-500/50 flex items-center justify-center gap-2"
                   >
                     <span className="text-xl">⬇️</span>
