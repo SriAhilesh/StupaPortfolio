@@ -33,7 +33,7 @@ export default function Home() {
         console.log("Fetch response:", fetchResponse.data);
 
         // Step 2: Generate portfolio using fetched data
-        const generateResponse = await axios.post(`${API_BASE}/generate_portfolio?style=${style}`);
+        const generateResponse = await axios.post(`${API_BASE}/generate_portfolio`, null, {params: { style }});
 
         console.log("Generate response:", generateResponse.data);
 
