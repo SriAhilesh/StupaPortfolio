@@ -1045,7 +1045,12 @@ def generate_portfolio(style: str = "academic"):
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_code)
 
-    return {"message": f"{style.capitalize()} portfolio generated!", "path": save_dir}
+    return {
+    "message": f"{style.capitalize()} portfolio generated!",
+    "path": save_dir,
+    "preview_url": f"/outputs/{style}_portfolio/index.html",
+    "zip_url": f"/download/{style}"
+    }
 
 from fastapi.responses import FileResponse
 import shutil
